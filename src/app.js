@@ -6,6 +6,9 @@ const myConnection = require('express-myconnection');
 
 const app = express();
 
+//Importando rutas
+const customerRoutes = require('./routes/customer');
+
 //Settings
 app.set('port', process.env.PORT || 3000);
 app.set('view engine','ejs');
@@ -21,8 +24,14 @@ app.use(myConnection(mysql, {
     database: 'ProyectoAyOCC'
 }, 'single'));
 
+app.use(express.urlencoded({extended: false}));
+
 //routes
-/
+app.use('/',customerRoutes);
+
+
+//Static files
+app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(app.get("port"), () =>{
     console.log('SERVER ON PORT 3000');
