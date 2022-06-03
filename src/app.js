@@ -22,7 +22,7 @@ app.use(myConnection(mysql, {
 }, 'single'));
 
 //routes
-
+/
 
 app.listen(app.get("port"), () =>{
     console.log('SERVER ON PORT 3000');
