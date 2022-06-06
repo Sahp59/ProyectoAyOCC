@@ -21,6 +21,13 @@ begin
 	set new.apellido_pat = upper(new.apellido_pat);
     set new.apellido_mat = upper(new.apellido_mat);
 end $$
+
+create trigger alumno_update_mayus before update on alumno for each row
+begin
+	set new.nombre = upper(new.nombre);
+	set new.apellido_pat = upper(new.apellido_pat);
+    set new.apellido_mat = upper(new.apellido_mat);
+end $$
 DELIMITER ;
 
 INSERT INTO alumno(nombre,apellido_pat,apellido_mat) VALUES("said alejandro","HERNANDEZ","PACHECO");

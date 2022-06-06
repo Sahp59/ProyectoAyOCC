@@ -19,6 +19,10 @@
                                 <td><%= data[i].nombre %></td>
                                 <td><%= data[i].apellido_pat %></td>
                                 <td><%= data[i].apellido_mat %></td>
+                                <td>
+                                    <a href="/update/<%= data[i].id_alu%>" class="btn btn-warning">Editar</a>
+                                    <a href="/delete/<%= data[i].id_alu%>" class="btn btn-danger">Eliminar</a>
+                                </td>
                             </tr>
                         <% }%>
                     <% }%>
@@ -38,7 +42,7 @@
                         <div class="form-group mt-3">
                             <input type="text" name="apellido_mat" placeholder="Apellido Materno" class="form-control">
                         </div>
-                        <div class="d-flex justify-content-end"><button type="submit" class="btn btn-primary mt-3">Añadir Alumno</button></div>     
+                        <div class="d-flex justify-content-end"><button type="submit" class="btn btn-success mt-3">Añadir Alumno</button></div>     
                     </form>
                 </div>
             </div>
