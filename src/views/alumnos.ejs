@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-7">
+        <div class="col-md-12">
             <table class="table table-bordered table-hover">
                 <thead>
                     <th>n°</th>
@@ -19,7 +19,7 @@
                                 <td><%= data[i].nombre %></td>
                                 <td><%= data[i].apellido_pat %></td>
                                 <td><%= data[i].apellido_mat %></td>
-                                <td>
+                                <td class="justify-content-center">
                                     <a href="/update/<%= data[i].id_alu%>" class="btn btn-warning">Editar</a>
                                     <a href="/delete/<%= data[i].id_alu%>" class="btn btn-danger">Eliminar</a>
                                 </td>
@@ -29,7 +29,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <form action="/add" method="post">
